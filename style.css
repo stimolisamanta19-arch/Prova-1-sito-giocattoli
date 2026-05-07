@@ -1,0 +1,698 @@
+html {
+		box-sizing: border-box; /* il comportamento di default è content-box, con border-box, larghezza e altezza includono anche il padding e i bordi, rendendo più intutivo il calcolo delle dimensioni */
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.contenitore {
+	max-width: 1100px; /* o quello che volete */
+	margin: 0 auto; /* per centrare quel contenitore nella pagina */
+}
+
+
+body {
+    font-family: 'Alan_Sans', serif;
+    -webkit-font-smoothing: antialiased; /* Rende il font più nitido su Mac */
+}
+
+/* Specifica lo stile per i titoli */
+h1, h2, h3 {
+    font-family: 'Limelight', sans-serif;
+    font-weight: 900; /* Molto spesso, come nel tuo design */
+    text-transform: uppercase; /* Per i titoli in maiuscolo */
+    letter-spacing: 1px;
+
+}/* --- Reset e Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- Layout e Contenitore --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px; /* Margine laterale uguale per tutto il sito */
+}
+
+/* --- Header --- */
+.navbar {
+    width: 100%;
+    border-bottom: 1px solid #e0f0ff;
+    padding: 20px 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #4a90e2;
+    font-weight: 700;
+    font-size: 14px;
+    position: relative; /* Necessario per posizionare la sottolineatura */
+    padding-bottom: 3px; /* Spazio tra testo e linea */
+    transition: color 0.3s ease;
+}
+
+/* Effetto hover con sottolineatura */
+.navbar ul li a:hover {
+    color: #2a6db8; /* Opzionale: scurisce leggermente il blu al passaggio */
+}
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4a90e2;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 900;
+    display: inline-block;
+    background: linear-gradient(180deg, transparent 60%, #d0e7ff 60%);
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+    font-size: 16px;
+    color: #555;
+}
+
+/* --- Sezione Periodi --- */
+.periodi-section {
+    margin-top: 60px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 900;
+    display: inline-block;
+    background: linear-gradient(180deg, transparent 60%, #d0e7ff 60%);
+    margin-bottom: 40px;
+}
+
+.periodi-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Testo più largo delle card */
+    gap: 60px;
+    align-items: start;
+}
+
+/* Lista a sinistra */
+.periodi-lista ul {
+    list-style: none;
+}
+
+.periodi-lista li {
+    margin-bottom: 25px;
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.periodi-lista li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.periodi-lista li strong {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+/* Griglia delle card */
+.periodi-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card-periodo {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-image {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 160px;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Label colorate larghe quanto la card */
+.card-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 10px 12px;
+    text-transform: uppercase;
+}
+
+.label-blue { background-color: #D0E7FF; }
+.label-yellow { background-color: #FFF4D0; }
+.label-pink { background-color: #F8BBD0; }
+.label-orange { background-color: #FFCCBC; }
+
+/* Footer card */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.arrow {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    transition: transform 0.2s;
+}
+
+.arrow:hover {
+    transform: translateX(5px);
+    color: #4a90e2;
+}
+
+/*GIOCHI*/
+.giochi-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+}
+
+.giochi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card-gioco {
+    text-align: center;
+}
+
+/* Contenitore dell'immagine */
+.gioco-container {
+    position: relative;
+    border-radius: 25px; /* Angoli molto arrotondati come nel design */
+    overflow: hidden;    /* Taglia l'immagine se esce dai bordi arrotondati */
+    height: 250px;       /* Altezza fissa per uniformità */
+    margin-bottom: 15px;
+}
+
+.gioco-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* L'immagine riempie tutto lo spazio */
+    display: block;
+}
+
+/* Bottone rotondo sovrapposto all'immagine */
+.btn-round-arrow {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    transition: transform 0.2s, color 0.2s; background-color: 0.2s;
+}
+
+.card-gioco:hover .btn-round-arrow {
+    transform: translateX(5px); /* Si muove a destra come nei periodi */
+    color: #ffffff;             /* La freccia diventa bianca per contrasto */
+    background-color: #4a90e2;  /* Il cerchio diventa azzurro come i link */
+}
+
+/* Etichetta ovale (Pillola) */
+.gioco-label {
+    display: block;
+    padding: 12px 0;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Colori coordinati */
+.btn-blue, .label-blue-soft { background-color: #d0e7ff; }
+.btn-green, .label-green-soft { background-color: #b9f6ca; }
+.btn-yellow, .label-yellow-soft { background-color: #fff1b8; }
+.btn-red, .label-red-soft { background-color: #ffb1b1; }
+
+/* --- Sezione Lo Sapevi Che? --- */
+.info-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Testo a sinistra, immagine a destra */
+    gap: 50px;
+    align-items: center;
+}
+
+.info-testo h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.info-testo p {
+    font-size: 16px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.info-immagine {
+    width: 100%;
+    /* Modifica l'altezza qui per renderla più stretta (es. da 300px a 200px) */
+    height: 220px; 
+    border-radius: 20px;
+    overflow: hidden; /* Taglia l'immagine che eccede l'altezza impostata */
+}
+
+.info-immagine img {
+    width: 100%;
+    height: 100%;
+    /* Fondamentale: mantiene le proporzioni e ritaglia l'eccesso invece di schiacciare */
+    object-fit: cover; 
+    display: block;
+}
+
+/* --- Footer --- */
+footer {
+    border-top: 3px solid #e0f0ff;
+    padding-top: 60px;
+    background-color: #fff;
+    margin-top: 80px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.footer-logo {
+    height: 35px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    color: #4a90e2; /* Blu come i link */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    display: inline-block; /* Permette il movimento fluido */
+    transition: all 0.3s ease; /* Transizione per colore e movimento */
+}
+
+.footer-column ul li a:hover {
+    color: #bbb; /* Colore più scuro al passaggio */
+}
+
+.footer-column a, .footer-column p {
+    text-decoration: none;
+    color: #4a90e2;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Link piccolini in fondo */
+.footer-bottom {
+    margin-top: 40px;
+    padding: 30px 0;
+}
+
+.footer-bottom .container {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 20px;
+}
+
+.footer-bottom a {
+    font-size: 10px;
+    color: #bbb;
+    text-decoration: none;
+}
+
+.footer-legal {
+    display: flex;
+    justify-content: center; /* CENTRA I LINK */
+    gap: 30px;               /* Spazio tra i link legali */
+}
+
+.footer-legal a:hover {
+    color: #4a90e2; /* Colore al passaggio del mouse */
+}
+
+
+/*PAGINA CURIOSITA*/
+.hero-curiosita {
+    padding: 60px 0;
+}
+
+.titolo-pillole {
+    font-family: 'Limelight', cursive;
+    font-size: 38px;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.titolo-pillole span {
+    background: linear-gradient(180deg, transparent 50%, #d0e7ff 50%);
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.Sottotitolo-curiosita {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
+
+.highlight {
+    display: table; 
+    /* Cambiamo le percentuali del gradiente */
+    /* 65% trasparente sopra, 35% azzurro sotto */
+    background: linear-gradient(180deg, transparent 65%, #d0e7ff 65%);
+    line-height: 1.2; 
+    margin-bottom: 8px; 
+    padding-right: 2px;
+}
+
+.pillole-filtri {
+    margin-bottom: 60px;
+    display: flex;
+    justify-content: center;
+}
+
+.pillole-container {
+    display: flex;
+    flex-wrap: wrap; /* Permette di andare a capo su più righe */
+    gap: 15px;       /* Spazio tra le pillole */
+    justify-content: center; /* Le centra se vuoi l'effetto simmetrico */
+    max-width: 850px;
+}
+
+.pillola {
+    font-family: 'Limelight', cursive; /* Font retrò dell'immagine */
+    font-size: 11px;
+    font-weight: 900;
+    text-decoration: none;
+    color: #333;
+    padding: 12px 25px;
+    border-radius: 50px; /* Effetto pillola */
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: transform 0.2s ease;
+}
+
+.pillola:hover {
+    transform: scale(1.05);
+}
+
+/* Colori Pastello (coordinati con il design precedente) */
+.filter-blue   { background-color: #D0E7FF; }
+.filter-green  { background-color: #C1F0C1; }
+.filter-yellow { background-color: #FFF4D0; }
+.filter-pink   { background-color: #FFC0CB; }
+.filter-orange { background-color: #FFDAB9; }
+.filter-red    { background-color: #FFB1B1; }
+
+.curiosita-grid-section {
+    margin-bottom: 100px;
+}
+
+.curiosita-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonne */
+    gap: 30px;
+}
+
+.card-curiosita {
+    background-color: #fff;
+    padding: 30px 20px;
+    border-radius: 15px; /* Angoli arrotondati */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; /* Altezza uniforme */
+    border: 4px solid; /* Bordo spesso */
+}
+
+.card-curiosita-titolo {
+    font-family: 'Limelight', cursive;
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Linea separatrice */
+.card-curiosita hr {
+    width: 100%;
+    border: none;
+    height: 1px;
+    margin-bottom: 25px;
+}
+
+.card-curiosita-testo {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Colori dei Bordi e delle Linee */
+.border-blue   { border-color: #D0E7FF; }
+.line-blue     { background-color: #D0E7FF; }
+
+.border-green  { border-color: #C1F0C1; }
+.line-green    { background-color: #C1F0C1; }
+
+.border-yellow { border-color: #FFF4D0; }
+.line-yellow   { background-color: #FFF4D0; }
+
+.border-pink   { border-color: #FFC0CB; }
+.line-pink     { background-color: #FFC0CB; }
+
+.border-orange { border-color: #FFDAB9; }
+.line-orange   { background-color: #FFDAB9; }
+
+.border-red    { border-color: #FFB1B1; }
+.line-red      { background-color: #FFB1B1; }
+
+
+/* --- Pagina Periodo Singolo --- */
+
+.periodo-intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr; /* Testo un po' più largo della timeline */
+    gap: 60px;
+    padding: 60px 0;
+    align-items: stretch;
+}
+
+.sopratitolo {
+    font-size: 12px;
+    font-weight: 800;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.titolo-periodo {
+    font-family: 'Limelight', cursive;
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.descrizione-periodo p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Box azzurro "Lo sapevi?" */
+.box-curiosita-azzurro {
+    background-color: #d0e7ff;
+    padding: 15px 20px;
+    border-radius: 5px; /* Angoli poco arrotondati come da foto */
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.periodo-timeline {
+    display: flex;
+    align-items: center; /* Centra l'immagine verticalmente se è più corta del testo */
+    justify-content: center;
+    max-height: 100%; /* Impedisce al contenitore di superare la griglia */
+}
+
+.periodo-timeline img {
+    max-width: 100%;
+    /* Impostiamo un'altezza massima basata sulla viewport o fissa per "accorciarla" */
+    max-height: 550px; 
+    object-fit: contain; /* Mantiene le proporzioni senza tagliare l'immagine */
+    width: auto; /* Permette alla larghezza di restringersi se l'altezza è il limite */
+}
+
+.giochi-periodo-section {
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+
+.giochi-periodo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 card sulla stessa riga */
+    gap: 20px;
+}
+
+.card-gioco-antico {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la "pillola" rispetto all'immagine */
+}
+
+.gioco-img-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Regola l'altezza secondo le tue foto */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.gioco-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+/* Bottone in alto a destra */
+.btn-action-top {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    background-color: #d0e7ff; /* Azzurro della pagina */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-action-top:hover {
+    transform: scale(1.1);
+    background-color: #b0d7ff;
+}
+
+/* La pillola azzurra con il nome */
+.gioco-tag {
+    background-color: #d0e7ff;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-size: 11px;
+    font-weight: 800;
+    font-family: 'Limelight', cursive; /* Usiamo lo stesso font retrò */
+    color: #333;
+    text-align: center;
+    width: fit-content; /* Si adatta alla lunghezza del testo */
+}
